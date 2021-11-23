@@ -1,5 +1,7 @@
 # rl-agents
-This repository holds implementations of Reinforcement Learning agents based on [Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book.html) [1].
+_Implementations of Reinforcement Learning agents based on [The Bible of Reinforcement Learning](http://incompleteideas.net/book/the-book.html)_ [1]
+
+
 
 ## Multi-armed Bandits
 Multi-armed Bandits are implemented with stationary and non-stationary environments using following action-selection methods:
