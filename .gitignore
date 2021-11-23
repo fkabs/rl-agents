@@ -127,3 +127,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# Jetbrains .idea folder with local project settings
+.idea
+
+# Visual Studios Code .vscode folders with local project settings
+.vscode
+.vscode-server
