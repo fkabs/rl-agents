@@ -1,5 +1,4 @@
 # rl-agents
-
 This repository holds implementations of Reinforcement Learning agents based on [Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book.html) [1].
 
 ## Multi-armed Bandits
@@ -29,7 +28,5 @@ Following Agents are already implemented:
 - Q-Learning
 - Double Q-Learning
 
-
 # References
-
 [1] R. S. Sutton and A. G. Barto, Reinforcement learning: an introduction, Second edition. Cambridge, Massachusetts: The MIT Press, 2018.
