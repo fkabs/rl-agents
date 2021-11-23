@@ -6,9 +6,9 @@ Multi-armed Bandits are implemented with stationary and non-stationary environme
 - Static
 - Random
 - Greedy
-- $\epsilon$-greedy
+- ε-greedy
 - Split
-- Linear decay $\epsilon$-greedy
+- Linear decay ε-greedy
 - Optimistic
 - UCB
 - Gradient (w/ and w/o baseline)
