@@ -136,24 +136,24 @@ class Bandit:
         else:
             self.q_estimates[action] += self.alpha * (reward - self.q_estimates[action])
         
-    def evaluate(self, epochs = 1e3, episodes = 1e3):
+    def evaluate(self, runs = 1e3, episodes = 1e3):
         # set seed and define zero rewards
         np.random.seed(self.seed)
-        rewards = np.zeros(shape = (epochs, episodes))
-        best_actions = np.zeros(shape = (epochs, episodes))
+        rewards = np.zeros(shape = (runs, episodes))
+        best_actions = np.zeros(shape = (runs, episodes))
         
-        # update class with epochs and episodes
-        self.epochs = epochs
+        # update class with runs and episodes
+        self.runs = runs
         self.episodes = episodes
         
-        for epoch in range(epochs):
+        for run in range(runs):
             self.init_bandit()
             
             for episode in range(episodes):
                 action = self.act()
-                rewards[epoch, episode] = self.perform_action(action)
+                rewards[run, episode] = self.perform_action(action)
                 
                 if action == self.best_action:
-                    best_actions[epoch, episode] = 1
+                    best_actions[run, episode] = 1
         
         return np.mean(rewards, axis = 0), np.mean(best_actions, axis = 0)
