@@ -67,13 +67,14 @@ class OnPolicy_Agent():
 
 class OffPolicy_Agent():
     
-    def __init__(self, state_space = None, action_space = None, epsilon = 0, first_visit = False):
+    def __init__(self, state_space = None, action_space = None, epsilon = 0, first_visit = False, weighted_importance_sampling = True):
         self.state_space = state_space
         self.action_space = action_space
         self.positions = np.arange(np.prod(state_space.nvec)).reshape(tuple(state_space.nvec)[::-1])
         
         self.epsilon = epsilon
         self.first_visit = first_visit
+        self.weighted_importance_sampling = weighted_importance_sampling
         
         self.is_learning = True
         
@@ -110,7 +111,8 @@ class OffPolicy_Agent():
                 if a != np.argmax(self.target_policy[s]):
                     break
                 
-                W = W * self.target_policy[s, a]/self.behavior_policy[s, a]
+                if self.weighted_importance_sampling:
+                    W = W * self.target_policy[s, a]/self.behavior_policy[s, a]
         
         self.max_updates.append(max_update)
         self.policy_improvement()
